@@ -16,6 +16,14 @@ namespace Blackjack
             dk.PopulateDeck();
             dk.ShuffleDeck();
             dk.PrintDeck();
+            Player p = new Player("Blake");
+            Console.WriteLine(p.bankroll);
+            p.IncrementBankroll(10000);
+            Console.WriteLine(p.bankroll);
+            p.DecrementBankroll(1235);
+            Console.WriteLine(p.bankroll);
+            p.DecrementBankroll(123501283);
+            Console.WriteLine(p.bankroll);
         }
     }
 }

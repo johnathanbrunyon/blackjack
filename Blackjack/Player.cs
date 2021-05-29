@@ -16,15 +16,22 @@ namespace Blackjack
             private set;
         }
 
-        public Player(double _bankroll, string _name)
+        public int wins
         {
-            bankroll = _bankroll;
+            get;
+            private set;
+        }
+
+        public Player(string _name)
+        {
+            bankroll = 100;
             name = _name;
+            wins = 0;
         }
 
         public double IncrementBankroll(double amt)
         {
-            return bankroll + amt;
+            return bankroll += amt;
         }
 
         public double DecrementBankroll(double amt)
@@ -32,9 +39,10 @@ namespace Blackjack
             if (bankroll - amt < 0)
             {
                 Console.WriteLine("You can't go into a negative balance!");
+                return bankroll;
             }
             
-            return bankroll - amt;
+            return bankroll -= amt;
         }
     }
 }
