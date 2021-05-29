@@ -44,5 +44,10 @@ namespace Blackjack
             
             return bankroll -= amt;
         }
+
+        public int IncrementWins()
+        {
+            return wins++;
+        }
     }
 }
