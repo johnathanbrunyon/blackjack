@@ -20,6 +20,8 @@ namespace Blackjack
         public Deck()
         {
             cards = new List<Card>();
+            PopulateDeck();
+            ShuffleDeck();
         }
 
         public void PopulateDeck()
@@ -56,5 +58,25 @@ namespace Blackjack
                 cards[i] = t;
             }
         }
+
+        public Card DealCard()
+        {
+            Card topCard = cards[0];
+            cards.RemoveAt(0);
+            cards.TrimExcess();
+            return topCard;
+        }
+
+        // public int CardValues(List<Card> cardsInHand)
+        // {
+        //     foreach (Card card in cardsInHand)
+        //     {
+        //         
+        //     }
+        //     Card cards = DealCard();
+        //     
+        //
+        //     return 0;
+        // }
     }
 }

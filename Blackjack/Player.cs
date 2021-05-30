@@ -4,6 +4,12 @@ namespace Blackjack
 {
     public class Player
     {
+        public Hand hand
+        {
+            get;
+            set;
+        }
+        
         public double bankroll
         {
             get;
@@ -27,6 +33,7 @@ namespace Blackjack
             bankroll = 100;
             name = _name;
             wins = 0;
+            hand = new Hand();
         }
 
         public double IncrementBankroll(double amt)
@@ -49,5 +56,7 @@ namespace Blackjack
         {
             return wins++;
         }
+        
+        
     }
 }
